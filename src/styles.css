@@ -1,36 +1,222 @@
+/* General Styling */
 body {
-    font-family: Arial, sans-serif;
-    max-width: 800px;
+    background-color: #202020;
+    color: #F0F0F0;
+    font-family: 'Inter', sans-serif;
+    max-width: 900px;
     margin: auto;
     padding: 20px;
-}
-
-form {
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    align-items: center;
 }
 
+h1 {
+    font-size: 28px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+h2 {
+    font-size: 24px;
+    margin-top: 40px;
+    margin-bottom: -5px;
+    text-align: center;
+}
+
+/* Form Styling */
+form {
+    align-items: center;
+    background: #292929;
+    padding: 25px;
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    border: 1px solid #3A3A3A;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.2);
+    width: 100%;
+    max-width: 600px;
+}
+
+/* Input Fields */
+input,
+select,
+textarea {
+    background: #333333;
+    color: #F0F0F0;
+    border: 1px solid #444444;
+    padding: 12px;
+    border-radius: 8px;
+    width: 100%;
+    font-size: 16px;
+    box-sizing: border-box;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+    outline: none;
+    border-color: #4A90E2;
+    box-shadow: 0px 0px 6px rgba(74, 144, 226, 0.6);
+}
+
+/* Buttons */
 button {
-    background-color: blue;
+    background-color: #4A90E2;
     color: white;
-    padding: 10px;
+    padding: 14px;
     border: none;
+    border-radius: 8px;
     cursor: pointer;
+    font-weight: bold;
+    font-size: 16px;
+    transition: all 0.2s ease-in-out;
+    position: relative;
+    overflow: hidden;
+    margin-top: 12px;
 }
 
 button:hover {
-    background-color: darkblue;
+    background-color: #357ABD;
+    transform: scale(1.05);
 }
 
+button:active {
+    transform: scale(0.95);
+}
+
+/* Button Click Animation */
+button:after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 300%;
+    height: 300%;
+    background: rgba(255, 255, 255, 0.2);
+    transition: width 0.3s ease-out, height 0.3s ease-out, opacity 0.3s ease-out;
+    border-radius: 50%;
+    opacity: 0;
+    transform: translate(-50%, -50%);
+}
+
+button:active:after {
+    width: 0%;
+    height: 0%;
+    opacity: 1;
+}
+
+/* Table Styling */
 table {
     width: 100%;
     border-collapse: collapse;
+    margin-top: 40px;
+    background: #292929;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+th,
+td {
+    border: 1px solid #3A3A3A;
+    padding: 14px;
+    text-align: left;
+}
+
+th {
+    background: #333333;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+td {
+    font-size: 14px;
+}
+
+/* Table Row Styling */
+tr:nth-child(even) {
+    background-color: #383838;
+}
+
+tr:hover {
+    background-color: #444444;
+    transition: background 0.2s ease-in-out;
+}
+
+/* Empty Application List Styling */
+.empty-message {
+    text-align: center;
+    padding: 15px;
+    background: #292929;
+    color: #B0B0B0;
+    font-size: 16px;
+    border-radius: 8px;
+    border: 1px solid #3A3A3A;
+    width: 100%;
+    max-width: 800px;
     margin-top: 20px;
 }
 
-th, td {
-    border: 1px solid black;
-    padding: 10px;
-    text-align: left;
+/* Success and Error Messages */
+.success {
+    color: #27AE60;
+    font-weight: bold;
+    text-align: center;
+}
+
+.error {
+    color: #E74C3C;
+    font-weight: bold;
+    text-align: center;
+}
+
+/* CSV Export Button */
+#export-csv {
+    margin-top: 25px;
+    background-color: #4A90E2;
+    padding: 14px;
+    border: none;
+    color: white;
+    font-weight: bold;
+    font-size: 16px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+    display: block;
+    width: 100%;
+    max-width: 200px;
+    text-align: center;
+}
+
+#export-csv:hover {
+    background-color: #357ABD;
+    transform: scale(1.05);
+}
+
+/* Centering Elements */
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+#applications-container {
+    width: 100%;
+    max-width: 800px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 600px) {
+
+    form,
+    table {
+        width: 100%;
+    }
 }

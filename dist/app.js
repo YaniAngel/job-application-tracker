@@ -11,20 +11,28 @@ const saveApplications = () => {
 };
 // Render applications in the table
 const renderApplications = () => {
+    const applicationsTable = document.getElementById("applications-table").querySelector("tbody");
+    const emptyMessage = document.getElementById("empty-message");
     applicationsTable.innerHTML = "";
-    applications.forEach((app, index) => {
-        const row = document.createElement("tr");
-        row.innerHTML = `
-            <td>${app.company}</td>
-            <td>${app.position}</td>
-            <td>${app.dateApplied}</td>
-            <td>${app.status}</td>
-            <td>
-                <button onclick="deleteApplication(${index})">Delete</button>
-            </td>
-        `;
-        applicationsTable.appendChild(row);
-    });
+    if (applications.length === 0) {
+        emptyMessage.style.display = "block"; // Show the empty message
+    }
+    else {
+        emptyMessage.style.display = "none"; // Hide the empty message
+        applications.forEach((app, index) => {
+            const row = document.createElement("tr");
+            row.innerHTML = `
+                <td>${app.company}</td>
+                <td>${app.position}</td>
+                <td>${app.dateApplied}</td>
+                <td>${app.status}</td>
+                <td>
+                    <button onclick="deleteApplication(${index})">Delete</button>
+                </td>
+            `;
+            applicationsTable.appendChild(row);
+        });
+    }
     console.log("Applications rendered:", applications);
 };
 // Handle form submission
