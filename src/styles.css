@@ -24,6 +24,53 @@ h2 {
     text-align: center;
 }
 
+/* Ensure table content is fully centered */
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th, td, tbody {
+    text-align: center;
+    align-items: center;
+    align-content: center;
+    vertical-align: middle;
+    padding: 12px;
+}
+
+/* Ensure buttons are centered and evenly spaced */
+.actions-cell {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px; 
+}
+
+/* Button Styling */
+.edit-btn, .delete-btn {
+    padding: 8px 14px;
+    border-radius: 6px;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.edit-btn {
+    background-color: #4A90E2;
+    color: white;
+}
+
+.delete-btn {
+    background-color: #E74C3C;
+    color: white;
+}
+
+.actions-cell button:hover {
+    opacity: 0.85;
+}
+
+
+
 /* Form Styling */
 form {
     align-items: center;
